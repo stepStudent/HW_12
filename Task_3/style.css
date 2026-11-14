@@ -1,0 +1,244 @@
+/* Базові стилі */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f3f5f9;
+    color: #1e293b;
+}
+
+/* 5 колонок на XL екранах для карток статистики */
+@media (min-width: 1200px) {
+    .col-xl-2-4 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+
+/* Шапка */
+.header-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Картки статистики */
+.stat-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 1rem;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+.stat-total {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Іконки категорій у статистиці */
+.stat-icon-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.food-icon {
+    background-color: #ffedd5;
+    color: #ea580c;
+}
+
+.transport-icon {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+.shopping-icon {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+.other-icon {
+    background-color: #ede9fe;
+    color: #7c3aed;
+}
+
+/* Користувацькі бейджі для фіолетового кольору */
+.bg-purple-subtle {
+    background-color: #ede9fe !important;
+}
+
+.text-purple-emphasis {
+    color: #7c3aed !important;
+}
+
+/* Кнопки-фільтри */
+.btn-category-filter {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-category-filter:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+.btn-category-filter.active {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+.btn-category-filter.active .badge {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+
+/* Картки витрат */
+.expense-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.85rem;
+    padding: 0.9rem 1.15rem;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.expense-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.06);
+    transform: translateY(-1px);
+}
+
+.expense-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--category-color, #64748b);
+}
+
+/* Бейджі категорій у списку */
+.category-badge-food {
+    --category-color: #f97316;
+    background-color: #ffedd5;
+    color: #c2410c;
+}
+
+.category-badge-transport {
+    --category-color: #0284c7;
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+.category-badge-shopping {
+    --category-color: #10b981;
+    background-color: #d1fae5;
+    color: #047857;
+}
+
+.category-badge-other {
+    --category-color: #8b5cf6;
+    background-color: #ede9fe;
+    color: #6d28d9;
+}
+
+.category-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Підсвітка тексту при пошуку */
+mark.search-highlight {
+    background-color: #fef08a;
+    padding: 0 2px;
+    border-radius: 2px;
+    color: inherit;
+}
+
+/* Кнопка видалення */
+.btn-delete {
+    color: #94a3b8;
+    background-color: transparent;
+    border: none;
+    padding: 0.35rem 0.55rem;
+    border-radius: 0.45rem;
+    transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+    color: #ef4444;
+    background-color: #fee2e2;
+}
+
+.btn-delete:active {
+    transform: scale(0.92);
+}
+
+.expense-amount {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+/* Список зі скролом */
+.expense-list {
+    max-height: 520px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.expense-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.expense-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.expense-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Анімація */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.expense-item-enter {
+    animation: slideIn 0.25s ease-out forwards;
+}
+
+.expense-item-exit {
+    opacity: 0;
+    transform: translateX(15px);
+    transition: all 0.2s ease-out;
+}
+

@@ -1,0 +1,117 @@
+/* Загальні стилі та фон */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #eef2f7 0%, #dbeafe 100%);
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* Картка реєстрації */
+.register-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 1.25rem !important;
+}
+
+.register-card:hover {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+}
+
+.registration-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+/* Поля форми */
+.form-control {
+    border-radius: 0.6rem;
+    padding: 0.68rem 0.85rem;
+    border: 1px solid #dce2ea;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-group > .form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group > .form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-control:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.15);
+}
+
+.input-group-text {
+    border-radius: 0.6rem;
+    border: 1px solid #dce2ea;
+}
+
+/* Кнопка показати/приховати пароль */
+.toggle-password {
+    border-color: #dce2ea;
+    background-color: #f8fafc;
+    color: #64748b;
+    border-top-right-radius: 0.6rem !important;
+    border-bottom-right-radius: 0.6rem !important;
+    transition: all 0.2s ease;
+}
+
+.toggle-password:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+    border-color: #cbd5e1;
+}
+
+/* Checkbox */
+.form-check-input {
+    cursor: pointer;
+    border-radius: 0.35rem;
+    border-color: #cbd5e1;
+}
+
+.form-check-input:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.form-check-label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Повідомлення про помилки */
+.invalid-feedback {
+    font-size: 0.825rem;
+    font-weight: 500;
+    margin-top: 0.35rem;
+}
+
+/* Блок успішного завершення */
+#successMessage {
+    animation: fadeInScale 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
